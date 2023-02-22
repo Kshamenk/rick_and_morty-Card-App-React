@@ -1,0 +1,32 @@
+.contenedor {
+    background-color: rgba(167, 136, 136, 0.767);
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
+  }
+  
+  .button {
+    background-color: #ff4136;
+    border: none;
+    border-radius: 5px;
+    color: #ccc;
+    font-size: larger;
+    margin-right: 0px;
+    margin-left: auto;
+    display: block;
+    
+  }
+  
+  h2 {
+    margin: 5px 0;
+  }
+  
+  img {
+    margin: 10px 0;
+    max-width: 100%;
+  }
