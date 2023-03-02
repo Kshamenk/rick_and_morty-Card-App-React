@@ -1,19 +1,27 @@
-import React,{useState} from "react";
-
+import React, { useState } from "react";
+import './SearchBar.css';
 
 export default function SearchBar(props) {
-   // var props = {onSearch:fn()}
-   const [character, setCharacter] = useState("")
+  const [character, setCharacter] = useState("");
 
- function handlerImputChange(event) {
-   var value = event.target.value
-   setCharacter(value)
- }
-   return (
-      <div>
-         <input type='search' onChange={handlerImputChange}/>
-         <button onClick={ ()=> props.onSearch(character) }>Add</button>
-      {/* <button onClick={()=>props.onChange(character)}>Agregar</button> */}
-      </div>
-   );
+  function handleInputChange(event) {
+    var value = event.target.value;
+    setCharacter(value);
+  }
+
+  return (
+    <div className="searchbar-container">
+      <input
+        type="search"
+        className="searchbar-input"
+        onChange={handleInputChange}
+      />
+      <button
+        className="searchbar-button"
+        onClick={() => props.onSearch(character)}
+      >
+        Add
+      </button>
+    </div>
+  );
 }

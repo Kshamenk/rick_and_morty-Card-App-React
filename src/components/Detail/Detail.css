@@ -1,0 +1,23 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+ }
+ 
+ .detail h1 {
+    font-size: 48px;
+    margin-top: 0;
+ }
+ 
+ .detail img {
+    max-width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
+ .detail h2 {
+    font-size: 24px;
+    margin-top: 0;
+ }

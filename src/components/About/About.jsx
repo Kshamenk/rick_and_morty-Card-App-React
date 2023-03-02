@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import React from 'react'
+import './About.css';
 
 export default function About() {
     return(
@@ -8,6 +8,3 @@ export default function About() {
     </div>
     )
 }
-=======
- 
->>>>>>> c3ff4b4022cce61ae537081bb62441a1ea347e09
