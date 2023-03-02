@@ -22,6 +22,8 @@ function App() {
       });
   }
 
+
+  
   function onClose(id) {
     setCharacters(characters.filter((char) => char.id !== id))
   }

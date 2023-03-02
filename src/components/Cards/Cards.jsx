@@ -3,6 +3,7 @@ import styles from './Cards.css';
 
 export default function Cards(props) {
   const { characters, onClose } = props;
+  
   return (
     <div className={styles.card}>
       <h1>Cards</h1>

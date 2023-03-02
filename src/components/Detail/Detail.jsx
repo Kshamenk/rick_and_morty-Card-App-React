@@ -17,6 +17,7 @@ export default function Detail() {
                window.alert('No hay personajes con ese ID');
             }
          })
+         
          .catch((err) => {
             window.alert('No hay personajes con ese ID');
          });
