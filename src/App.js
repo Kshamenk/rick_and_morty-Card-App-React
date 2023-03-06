@@ -5,6 +5,7 @@ import Cards from './components//Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import Detail from './components/Detail/Detail.jsx'
 import About from './components/About/About.jsx'
+import Form from './components/Form/Form';
 //import characters from './data.js';
 
 function App() {
@@ -31,10 +32,12 @@ function App() {
     <div className='App' style={{ padding: '25px' }}>
         <Nav onSearch={onSearch} />
       <Routes>
+       <Route exact path='/' element={<Form/>} />
         <Route path='/home' element={<Cards onClose={onClose} characters={characters} />} /> 
         <Route path='/detail/:detailId' element={<Detail />}/> 
         <Route path='/about' element={<About/>} />
       </Routes>
+
     </div>
   );
 }

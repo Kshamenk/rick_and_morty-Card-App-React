@@ -5,11 +5,7 @@
    align-items: center;
  }
  
- .App {
-  background-color: rgb(37, 61, 61);
-   font-family: sans-serif;
-   text-align: center;
- }
+
  
  .header {
    display: flex;
