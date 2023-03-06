@@ -1,4 +1,4 @@
-.contenedor{
+.form{
     display: flex;
     flex-direction: column;
     max-width: fit-content;
@@ -18,3 +18,8 @@
 .button{
     padding: 10px;
 }
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }

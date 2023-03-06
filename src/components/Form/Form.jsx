@@ -1,57 +1,65 @@
-import React, { useState } from "react";
-import validation from "./validation.js";
-import styles from './Form.module.css'
-// resolver act 2
-export default function Form() {
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import validation from './validation';
+import style from '../Form/Form.module.css';
 
-   
-    const [userData, setUserData] = useState(
-        { username: '', password: '' });
+function Form() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();      // hook para redirigir una URL al resultado de otra ruta
 
-    const [errors, seterrors] = useState( 
-        { username: '', password: '' })    
+  function handleSubmit(e) {
+    e.preventDefault();
+    const errors = validation({ username, password });
+    setErrors(errors);
 
-
-    function handleInputChange(event) {
-        const property = event.target.name
-        const value = event.target.value
-        setUserData({
-            ...userData,
-            [property] : value
-        })
-        seterrors(validation({
-            ...userData,
-            [property] : value
-        }))
+    if (Object.keys(errors).length === 0) { // si los obj.keys de error es 0 se podría enviar el formulario o hacer otra acción
+      
+      navigate('/home');
     }
+  }
 
-
-    return (
-        <div className={styles.contenedor}>
-            <form >
-                <div className={styles.user}>
-                    <label htmlFor="username">User Name: </label>
-                    <input
-                        type="text"
-                        name='username'
-                        value={userData.username}
-                        placeholder='Ingrese un Usuario'
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className={styles.pass}>
-                    <label htmlFor="password">Password: </label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={userData.password}
-                        placeholder='Ingrese su contreseña'
-                        onChange={handleInputChange} />
-                </div>
-                <div className={styles.button}>
-                    <button>Enviar</button>
-                </div>
-            </form>
+  return (
+    <div className={style.form}>
+      <form onSubmit={handleSubmit}>
+        <div className={style.user}>
+          <label htmlFor="username">Nombre de usuario</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            
+          />
+          {errors.username && (
+            <div className={style["error-message"]}>{errors.username}</div>
+          )}
         </div>
-    )
+
+        <div className={style.pass}>
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={style.pass}
+          />
+          {errors.password && (
+            <div className={style["error-message"] }>{errors.password}</div>
+          )}
+        </div>
+
+        <button className={style.button} type="submit">Enviar</button>
+      </form>
+    </div>
+  );
 }
+
+export default Form;
+
+
+
+
+

@@ -12,17 +12,11 @@
   }
   
   .card button {
-<<<<<<< HEAD
     position: relative;
     top: 10px;
     margin-right: 5px;
     margin-left: auto;
     left: auto;
-=======
-    position:relative;
-    top: 5px;
-    right: -130px;
->>>>>>> cd215223eee3657aebfd02899d5d728cbae0268a
     background-color: #f44336;
     color: #fff;
     border: none;
