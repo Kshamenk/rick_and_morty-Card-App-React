@@ -3,22 +3,40 @@
     flex-direction: column;
     max-width: fit-content;
     max-height: fit-content;
-    border: 2px solid red;
-    padding: 10px;
+    border: 2px solid #ccc;
+    padding: 15px;
     margin: 10px;
     align-items: center;
     justify-content: space-around;
-}
-.user{
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .user{
     padding: 10px;
-}
-.pass{
+  }
+  
+  .pass{
     padding: 10px;
-}
-.button{
+  }
+  
+  .button{
     padding: 10px;
-}
-.error-message {
+    background-color: #1E90FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .button:hover{
+    background-color: #0077B6;
+  }
+  
+  .error-message {
     color: red;
     font-size: 12px;
     margin-top: 5px;

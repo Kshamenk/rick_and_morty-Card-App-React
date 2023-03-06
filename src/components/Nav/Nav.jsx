@@ -1,10 +1,10 @@
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { Link } from 'react-router-dom';
-import './Nav.css'; // importar el archivo CSS
+import styles from './Nav.module.css';
 
 function Nav(props) {
   return (
-    <div className="Nav"> {/* usar la clase CSS */}
+    <div className={styles.Nav}> 
       <div>
         <Link to='/About'>
           <h1>About</h1>

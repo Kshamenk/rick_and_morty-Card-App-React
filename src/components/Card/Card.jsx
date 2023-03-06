@@ -1,13 +1,11 @@
-import React from 'react';
+import styles from './Card.module.css'; // Importamos el archivo CSS del módulo
 import { Link } from 'react-router-dom';
-import './Card.css'; // Importamos el archivo CSS
-
 export default function Card(props) {
   const { name, species, gender, image, onClose, id, detailId } = props;
 
   return (
-    <div className="card"> {/* Agregamos la clase CSS "card" */}
-      <button onClick={onClose} value={id}>X</button>
+    <div className={styles.card}> 
+      <button className={styles.button} onClick={onClose} value={id}>X</button>
       <Link to={`/detail/${detailId}`} >
         <h2>{name}</h2>
       </Link>

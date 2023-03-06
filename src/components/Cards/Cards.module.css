@@ -1,0 +1,17 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap; /* esto permite que las cards se ajusten al ancho de la pantalla */
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.cards h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%; /* para que el título ocupe todo el ancho de la pantalla */
+  text-align: center; /* para centrar el título */
+}

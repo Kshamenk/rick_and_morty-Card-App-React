@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import validation from './validation';
 import style from '../Form/Form.module.css';
 
-function Form() {
+function Form(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();      // hook para redirigir una URL al resultado de otra ruta
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  function handleSubmit(e) {  //se ejecuta cuando se envía el formulario
     e.preventDefault();
-    const errors = validation({ username, password });
-    setErrors(errors);
-
-    if (Object.keys(errors).length === 0) { // si los obj.keys de error es 0 se podría enviar el formulario o hacer otra acción
-      
-      navigate('/home');
+    const errors = validation({ username, password });//utiliza la función validation para validar el formulario
+    setErrors(errors);  
+    if (Object.keys(errors).length === 0) {   //si no hay error, el form se envia
+      const userData = { username, password };
+      props.onLogin(userData);
+      navigate('/home'); //redirecciona a /home
     }
   }
 

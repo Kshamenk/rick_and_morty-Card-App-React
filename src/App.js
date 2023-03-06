@@ -9,7 +9,7 @@ import Form from "./components/Form/Form";
 
 function App() {
   const navigate = useNavigate();
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(false); //pide que seteemos acess en false
   const username = 'ejemplo@gmail.com';
   const password = '1password';
   const [characters, setCharacters] = useState([]);
@@ -26,26 +26,26 @@ function App() {
       });
   }
 
-  function onClose(id) {
+  function onClose(id) {  //f para setear los charid
     setCharacters(characters.filter((char) => char.id !== id));
   }
 
   function login(userData) {
-    if (userData.password === password && userData.username === username) {
-      setAccess(true);
+    if (userData.password === password && userData.username === username) { // digo que si coinciden el estado con el input, se envia el formulario
+      setAccess(true); //porque ahora acces es true
       navigate('/home');
     }
   }
 
-  const location = useLocation();
+  const location = useLocation();  //redirigir al usuario a la URL que establecimossss
 
   useEffect(() => {
     !access && navigate('/');
-  }, [access, navigate]);
+  }, [access, navigate]); //el array de
 
   return (
     <div className="App" style={{ padding: "25px" }}>
-      {!access && <Form onLogin={login} />}
+      {!access && <Form onLogin={login} />}    
       {access && location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route
