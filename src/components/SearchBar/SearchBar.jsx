@@ -8,6 +8,7 @@ export default function SearchBar(props) {
     var value = event.target.value;
     setCharacter(value);
   }
+  
 
   return (
     <div className="searchbar-container">

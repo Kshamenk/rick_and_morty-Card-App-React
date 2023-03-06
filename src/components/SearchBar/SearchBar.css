@@ -1,6 +1,6 @@
 .searchbar-container {
     display: flex;
-    align-items: center;
+    align-items: space-around;
     justify-content: center;
     margin: 20px 0;
   }
