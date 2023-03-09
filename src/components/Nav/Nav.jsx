@@ -6,8 +6,13 @@ function Nav(props) {
   return (
     <div className={styles.Nav}> 
       <div>
-        <Link to='/About'>
+        <Link to='/about'>
           <h1>About</h1>
+        </Link>
+      </div>
+      <div>
+        <Link to='/favorites'>
+          <h1>Favorites</h1>
         </Link>
       </div>
       <div>

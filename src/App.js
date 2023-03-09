@@ -6,6 +6,7 @@ import Nav from "./components/Nav/Nav.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import About from "./components/About/About.jsx";
 import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ function App() {
         />
         <Route path="/detail/:detailId" element={<Detail />} />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element= {<Favorites/>} />
       </Routes>
     </div>
   );
