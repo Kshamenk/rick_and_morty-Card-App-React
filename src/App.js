@@ -50,7 +50,7 @@ function App() {
       {access && location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route
-          path="/home"
+            path="/home"
           element={<Cards onClose={onClose} characters={characters} />}
         />
         <Route path="/detail/:detailId" element={<Detail />} />

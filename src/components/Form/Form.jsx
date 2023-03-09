@@ -9,14 +9,15 @@ function Form(props) {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  function handleSubmit(e) {  //se ejecuta cuando se envía el formulario
+  function handleSubmit(e) {
     e.preventDefault();
-    const errors = validation({ username, password });//utiliza la función validation para validar el formulario
-    setErrors(errors);  
-    if (Object.keys(errors).length === 0) {   //si no hay error, el form se envia
+    const errors = validation({ username, password });
+    setErrors(errors);
+    if (Object.keys(errors).length === 0) {
       const userData = { username, password };
-      props.onLogin(userData);
-      navigate('/home'); //redirecciona a /home
+      if (props.onLogin(userData)) {
+        navigate('/home');
+      }
     }
   }
 
