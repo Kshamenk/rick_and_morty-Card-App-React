@@ -42,6 +42,7 @@ function App() {
 
   useEffect(() => {
     !access && navigate('/');
+    // eslint-disable-next-line
   }, [access, navigate]); //el array de
 
   return (

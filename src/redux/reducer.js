@@ -10,7 +10,8 @@ function reducer(state = initialState, action) {
     case ADD_CHARACTER:
       return {
         ...state,
-        myFavorites: [...state.myFavorites, action.payload ],
+        myFavorites: [...state.allCharacters, action.payload ],
+        allCharacters: [...state.allCharacters, action.payload ],
       };
     case DELETE_CHARACTER:
       return {
