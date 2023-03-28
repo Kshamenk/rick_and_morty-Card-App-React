@@ -1,6 +1,6 @@
 import styles from './Card.module.css'; // Importamos el archivo CSS del módulo
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { addCharacter, deleteCharacter } from '../../redux/actions.js'
 import { useState, useEffect } from 'react';
 

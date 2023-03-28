@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import './Detail.css';
+import styles from '../Detail/Detail.module.css';
 
 export default function Detail() {
    const [character, setCharacter] = useState({});
@@ -25,7 +25,7 @@ export default function Detail() {
    }, [detailId]);
 
    return(
-      <div className="detail">
+      <div className={styles.detail}>
          <h1>{character.name}</h1>
          <img src={character.image} alt='Img not found' />
          <h2>{character.species}</h2>
