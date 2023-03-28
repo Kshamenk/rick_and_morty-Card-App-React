@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from './App.module.css'
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Cards from "./components/Cards/Cards.jsx";
@@ -46,7 +46,7 @@ function App() {
   }, [access, navigate]); //el array de
 
   return (
-    <div className="App" style={{ padding: "25px" }}>
+    <div className={styles.App}>
       {!access && <Form onLogin={login} />}    
       {access && location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
