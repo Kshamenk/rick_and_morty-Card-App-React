@@ -4,7 +4,6 @@ import styles from '../Detail/Detail.module.css';
 
 export default function Detail() {
    const [character, setCharacter] = useState({});
-   console.log(character);
    const {detailId} = useParams();
 
    useEffect(() => {
